@@ -41,13 +41,12 @@ header {
 
 
 /* main ======================= */
-.container {
+main.container {
   width: min(90vw,800px);
   margin: auto;
   margin-top: -8rem;
 
 }
-
 
 /* balance ======================= */
 #balance h2 {
@@ -107,8 +106,8 @@ header {
   text-align: left;
 }
 
-#data-table tr {
-  opacity: .7;
+#data-table tbody tr {
+  opacity: 0.7;
 }
 
 #data-table tbody tr:hover {
@@ -121,7 +120,24 @@ header {
  padding: 1rem 2rem;
 }
 
+td.description {
+  color: var(--dark-blue);
+}
+
+td.income {
+  color: #12A454;
+}
+
+td.expense {
+  color: #E92929
+}
+
+
+
 /* footer ======================= */
 footer {
   text-align: center;
+  padding: 4rem 0 2rem;
+  color: var(--dark-blue);
+  opacity: 0.6;
 }
