@@ -1,3 +1,8 @@
+/* universal ======================= */
+:root {
+  --white-text-color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,25 +14,43 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Header ======================= */
+h2 {
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+  margin-top: 3.2rem;
+  color: #363f5f;
+}
+
+
+/* header ======================= */
 header {
-  background: #2D4A22;
+  background:  #2D4A22;
   padding: 2rem 0 10rem;
   text-align: center;
 }
 
 #logo {
-  color: #fff;
+  color: var(--white-text-color);
   font-weight: 100;
 }
+
 
 /* main ======================= */
 .container {
   width: min(90vw,800px);
   margin: auto;
+  margin-top: -8rem;
 }
 
-/* Balance ======================= */
+
+/* balance ======================= */
+#balance h2 {
+  color: var(--white-text-color);
+  margin-top: 0;
+}
+
+
+/* transactions ======================= */
 
 
 
