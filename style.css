@@ -4,6 +4,7 @@
   --dark-green: #2D4A22;
   --ice-white: #f0f2f5;
   --light-green: #49AA26;
+  --light-gray: #969Cb3;
 }
 
 /* universal ======================= */
@@ -44,6 +45,7 @@ header {
   width: min(90vw,800px);
   margin: auto;
   margin-top: -8rem;
+
 }
 
 
@@ -82,7 +84,42 @@ header {
 }
 
 /* table ======================= */
+#data-table {
+  width: 100%;
+  border-spacing: 0 0.5rem; /* exito vertical e eixo horizontal */
+  color: var(--light-gray);
 
+}
+
+#data-table thead tr th:first-child,
+#data-table tbody tr td:first-child {
+  border-radius: .25rem 0 0 .25rem;
+}
+
+#data-table th {
+  background: var(--white);
+
+  color: #969CB3;
+  font-weight: 400;
+
+  padding: 1rem 2rem;
+
+  text-align: left;
+}
+
+#data-table tr {
+  opacity: .7;
+}
+
+#data-table tbody tr:hover {
+  opacity: 1;
+}
+
+
+#data-table tbody td {
+ background: var(--white);
+ padding: 1rem 2rem;
+}
 
 /* footer ======================= */
 footer {
