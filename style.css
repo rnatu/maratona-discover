@@ -1,8 +1,11 @@
-/* universal ======================= */
 :root {
-  --white-text-color: #fff;
+  --white: #fff;
+  --dark-blue: #363f5f;
+  --dark-green: #2D4A22;
+  --ice-white: #f0f2f5;
 }
 
+/* universal ======================= */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +13,7 @@
 }
 
 body {
-  background: #f0f2f5;
+  background: var(--ice-white);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -18,19 +21,19 @@ h2 {
   margin-bottom: 0.8rem;
   font-weight: 400;
   margin-top: 3.2rem;
-  color: #363f5f;
+  color: var(--dark-blue);
 }
 
 
 /* header ======================= */
 header {
-  background:  #2D4A22;
+  background: var(--dark-green);
   padding: 2rem 0 10rem;
   text-align: center;
 }
 
 #logo {
-  color: var(--white-text-color);
+  color: var(--white);
   font-weight: 100;
 }
 
@@ -45,12 +48,21 @@ header {
 
 /* balance ======================= */
 #balance h2 {
-  color: var(--white-text-color);
+  color: var(--white);
   margin-top: 0;
 }
 
 
-/* transactions ======================= */
+/* cards ======================= */
+.card {
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: .25rem;
+
+  margin-bottom: 2rem;
+
+  color: var(--dark-blue);
+}
 
 
 
