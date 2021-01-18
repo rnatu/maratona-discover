@@ -3,6 +3,7 @@
   --dark-blue: #363f5f;
   --dark-green: #2D4A22;
   --ice-white: #f0f2f5;
+  --light-green: #49AA26;
 }
 
 /* universal ======================= */
@@ -64,6 +65,23 @@ header {
   color: var(--dark-blue);
 }
 
+.card h3 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.card p {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1rem;
+}
+
+.card.total {
+  background: var(--light-green);
+  color: var(--white);
+}
+
+/* table ======================= */
 
 
 /* footer ======================= */
