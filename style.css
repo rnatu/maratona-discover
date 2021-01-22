@@ -5,6 +5,7 @@
   --ice-white: #f0f2f5;
   --light-green: #49aa26;
   --light-gray: #969cb3;
+  --link: #3dd705;
 }
 
 /* universal ======================= */
@@ -22,8 +23,6 @@ body {
 h2 {
   margin-bottom: 0.8rem;
   font-weight: 400;
-  margin-top: 3.2rem;
-  color: var(--dark-blue);
 }
 
 .sr-only {
@@ -33,7 +32,7 @@ h2 {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0 ,0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
 }
@@ -92,6 +91,30 @@ header {
 .card.total {
   background: var(--light-green);
   color: var(--white);
+}
+
+/* transactions ======================= */
+#transactions h2 {
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+  margin-top: 3.2rem;
+  color: var(--dark-blue);
+}
+
+/* links and buttons ========== */
+a {
+  text-decoration: none;
+
+  color: var(--light-green);
+}
+
+a:hover {
+  color: var(--link);
+}
+
+.button.new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
 }
 
 /* table ======================= */
