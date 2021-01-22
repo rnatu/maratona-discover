@@ -1,10 +1,10 @@
 :root {
   --white: #fff;
   --dark-blue: #363f5f;
-  --dark-green: #2D4A22;
+  --dark-green: #2d4a22;
   --ice-white: #f0f2f5;
-  --light-green: #49AA26;
-  --light-gray: #969Cb3;
+  --light-green: #49aa26;
+  --light-gray: #969cb3;
 }
 
 /* universal ======================= */
@@ -16,7 +16,7 @@
 
 body {
   background: var(--ice-white);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 h2 {
@@ -26,6 +26,17 @@ h2 {
   color: var(--dark-blue);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0 ,0);
+  white-space: nowrap;
+  border-width: 0;
+}
 
 /* header ======================= */
 header {
@@ -39,13 +50,11 @@ header {
   font-weight: 100;
 }
 
-
 /* main ======================= */
-main.container {
-  width: min(90vw,800px);
+.container {
+  width: min(90vw, 800px);
   margin: auto;
   margin-top: -8rem;
-
 }
 
 /* balance ======================= */
@@ -54,12 +63,11 @@ main.container {
   margin-top: 0;
 }
 
-
 /* cards ======================= */
 .card {
   background: var(--white);
   padding: 1.5rem 2rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 
   margin-bottom: 2rem;
 
@@ -87,18 +95,17 @@ main.container {
   width: 100%;
   border-spacing: 0 0.5rem; /* exito vertical e eixo horizontal */
   color: var(--light-gray);
-
 }
 
 #data-table thead tr th:first-child,
 #data-table tbody tr td:first-child {
-  border-radius: .25rem 0 0 .25rem;
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
 #data-table th {
   background: var(--white);
 
-  color: #969CB3;
+  color: #969cb3;
   font-weight: 400;
 
   padding: 1rem 2rem;
@@ -114,10 +121,9 @@ main.container {
   opacity: 1;
 }
 
-
 #data-table tbody td {
- background: var(--white);
- padding: 1rem 2rem;
+  background: var(--white);
+  padding: 1rem 2rem;
 }
 
 td.description {
@@ -125,14 +131,12 @@ td.description {
 }
 
 td.income {
-  color: #12A454;
+  color: #12a454;
 }
 
 td.expense {
-  color: #E92929
+  color: #e92929;
 }
-
-
 
 /* footer ======================= */
 footer {
