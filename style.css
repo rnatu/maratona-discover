@@ -70,9 +70,9 @@ header {
 .card {
   background: var(--white);
   padding: 1.5rem 2rem;
-  border-radius: 0.25rem;
-
   margin-bottom: 2rem;
+
+  border-radius: 0.25rem;
 
   color: var(--dark-blue);
 }
@@ -123,15 +123,12 @@ a:hover {
 
 /* table ======================= */
 #data-table {
+  width: 100%;
   display: block;
   overflow-x: auto;
 
-
-  width: 100%;
   border-spacing: 0 0.5rem; /* exito vertical e eixo horizontal */
   color: var(--light-gray);
-
-
 }
 
 #data-table thead tr th:first-child,
@@ -187,7 +184,6 @@ footer {
   color: var(--dark-blue);
   opacity: 0.6;
 }
-
 
 /* Responsive =============================================== */
 @media (min-width: 800px) {
