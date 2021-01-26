@@ -207,10 +207,11 @@ td.expense {
 .modal {
   background-color: var(--ice-white);
 
-  width: min(80vw);
   padding: 2.4rem;
-
 }
+
+/* form ========= */
+
 
 
 /* footer ======================= */
