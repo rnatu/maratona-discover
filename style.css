@@ -8,7 +8,7 @@
   --link: #3dd705;
 }
 
-/* universal ======================= */
+/* universal ========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +41,7 @@ h2 {
   border-width: 0;
 }
 
-/* header ======================= */
+/* header ========================================== */
 header {
   background: var(--dark-green);
   padding: 2rem 0 10rem;
@@ -53,20 +53,20 @@ header {
   font-weight: 100;
 }
 
-/* main ======================= */
+/* main =========================================== */
 .container {
   width: min(90vw, 800px);
   margin: auto;
   margin-top: -8rem;
 }
 
-/* balance ======================= */
+/* balance ====================== */
 #balance h2 {
   color: var(--white);
   margin-top: 0;
 }
 
-/* cards ======================= */
+/* cards ===== */
 .card {
   background: var(--white);
   padding: 1.5rem 2rem;
@@ -97,7 +97,13 @@ header {
   color: var(--white);
 }
 
-/* transactions ======================= */
+/* transactions ================= */
+#transactions {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
 #transactions h2 {
   margin-bottom: 0.8rem;
   font-weight: 400;
@@ -124,8 +130,6 @@ a:hover {
 /* table ======================= */
 #data-table {
   width: 100%;
-  display: block;
-  overflow-x: auto;
 
   border-spacing: 0 0.5rem; /* exito vertical e eixo horizontal */
   color: var(--light-gray);
@@ -176,6 +180,38 @@ td.income {
 td.expense {
   color: #e92929;
 }
+
+/* modal ======================== */
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  top: 0;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: var(--ice-white);
+
+  width: min(80vw);
+  padding: 2.4rem;
+
+}
+
 
 /* footer ======================= */
 footer {
