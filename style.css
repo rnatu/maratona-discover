@@ -238,6 +238,8 @@ td.expense {
 
   opacity: 0;
   visibility: hidden;
+
+  z-index: 999;
 }
 
 .modal-overlay.active {
@@ -251,6 +253,9 @@ td.expense {
   padding: 2.4rem;
 
   width: min(90%, 500px);
+
+  position: relative;
+  z-index: 1;
 }
 
 /* form ========= */
