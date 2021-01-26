@@ -6,6 +6,7 @@
   --light-green: #49aa26;
   --light-gray: #969cb3;
   --link: #3dd705;
+  --red: #e92929;
 }
 
 /* universal ========================================= */
@@ -111,10 +112,9 @@ header {
   color: var(--dark-blue);
 }
 
-/* links and buttons ========== */
+/* links and buttons ==================================== */
 a {
   text-decoration: none;
-
   color: var(--light-green);
 }
 
@@ -122,9 +122,50 @@ a:hover {
   color: var(--link);
 }
 
+button {
+  width: 100%;
+  height: 50px;
+
+  font-size: 1rem;
+  color: var(--white);
+
+  border: none;
+  background-color: var(--light-green);
+
+  border-radius: 0.25rem;
+
+  cursor: pointer;
+}
+
+button:hover {
+  transition: 0.1s;
+  background-color: var(--link);
+}
+
 .button.new {
   display: inline-block;
   margin-bottom: 0.8rem;
+}
+
+.button.cancel {
+  font-size: 1rem;
+  color: var(--red);
+
+  border: 2px solid var(--red);
+  border-radius: 0.25rem;
+
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.6;
+}
+
+.button.cancel:hover {
+  transition: 0.1s;
+  opacity: 1;
 }
 
 /* table ======================= */
@@ -195,8 +236,8 @@ td.expense {
   align-items: center;
   justify-content: center;
 
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .modal-overlay.active {
@@ -208,17 +249,53 @@ td.expense {
   background-color: var(--ice-white);
 
   padding: 2.4rem;
+
+  width: min(90%, 500px);
 }
 
 /* form ========= */
+#form {
+  max-width: 500px;
+}
 
+#form h2 {
+  margin-top: 0;
+}
 
+input {
+  border: none;
+  border-radius: 0.2rem;
+
+  padding: 0.8rem;
+
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+}
+
+.input-group small{
+  opacity: 0.4;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+  width: 48%;
+}
 
 /* footer ======================= */
 footer {
   text-align: center;
   padding: 4rem 0 2rem;
   color: var(--dark-blue);
+
   opacity: 0.6;
 }
 
