@@ -99,9 +99,9 @@ header {
 }
 
 /* transactions ================= */
-#transactions {
-  display: block;
+#transaction {
   width: 100%;
+  display: block;
   overflow-x: auto;
 }
 
