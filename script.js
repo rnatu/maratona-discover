@@ -33,9 +33,15 @@ const transactions = [
 ];
 
 const Transaction = {
-  incomes() {},
-  expenses() {},
-  total() {},
+  incomes() {
+    return 'cheguei';
+  },
+  expenses() {
+    return ' aqui';
+  },
+  total() {
+    return 'discover';
+  },
 };
 
 const Utils = {
@@ -81,8 +87,18 @@ const DOM = {
 
     return html;
   },
+
+  updateBalance() {
+    document.querySelector('#incomeDisplay').innerHTML = Transaction.incomes();
+    document.querySelector(
+      '#expenseDisplay',
+    ).innerHTML = Transaction.expenses();
+    document.querySelector('#totalDisplay').innerHTML = Transaction.total();
+  },
 };
 
 transactions.forEach((transaction) => {
   DOM.addTransaction(transaction);
 });
+
+DOM.updateBalance();
