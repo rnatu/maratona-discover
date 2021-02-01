@@ -5,38 +5,38 @@ const modal = {
   },
 };
 
-const transactions = [
-  {
-    id: 1,
-    description: 'Luz',
-    amount: -50000,
-    date: '23/01/2021',
-  },
-  {
-    id: 2,
-    description: 'Criação website',
-    amount: 500000,
-    date: '13/01/2021',
-  },
-  {
-    id: 3,
-    description: 'Internet',
-    amount: -20510,
-    date: '25/01/2021',
-  },
-  {
-    id: 4,
-    description: 'App',
-    amount: 200000,
-    date: '25/01/2021',
-  },
-];
-
 const Transaction = {
-  all: transactions,
+  all: [
+    {
+      description: 'Luz',
+      amount: -50000,
+      date: '23/01/2021',
+    },
+    {
+      description: 'Criação website',
+      amount: 500000,
+      date: '13/01/2021',
+    },
+    {
+      description: 'Internet',
+      amount: -20510,
+      date: '25/01/2021',
+    },
+    {
+      description: 'App',
+      amount: 200000,
+      date: '25/01/2021',
+    },
+  ],
 
   add(transaction) {
     Transaction.all.push(transaction);
+
+    App.reload();
+  },
+
+  remove(index) {
+    Transaction.all.splice(index, 1);
 
     App.reload();
   },
@@ -123,13 +123,13 @@ const DOM = {
   },
 };
 
-transactions.forEach((transaction) => {
+Transaction.all.forEach((transaction) => {
   DOM.addTransaction(transaction);
 });
 
 const App = {
   init() {
-    transactions.forEach((transaction) => {
+    Transaction.all.forEach((transaction) => {
       DOM.addTransaction(transaction);
     });
 
@@ -145,7 +145,6 @@ const App = {
 App.init();
 
 Transaction.add({
-  id: 5,
   description: 'Gás',
   amount: -8000,
   date: '23/01/2021',
