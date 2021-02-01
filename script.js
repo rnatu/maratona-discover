@@ -34,13 +34,23 @@ const transactions = [
 
 const Transaction = {
   incomes() {
-    return 'cheguei';
+    let income = 0;
+    transactions.forEach((value) => {
+      if (value.amount > 0) income += value.amount;
+    });
+
+    return income;
   },
   expenses() {
-    return ' aqui';
+    let expense = 0;
+    transactions.forEach((value) => {
+      if (value.amount < 0) expense += value.amount;
+    });
+
+    return expense;
   },
   total() {
-    return 'discover';
+    return this.incomes() + this.expenses();
   },
 };
 
@@ -66,12 +76,12 @@ const DOM = {
 
   addTransaction(transaction, index) {
     const tr = document.createElement('tr');
-    tr.innerHTML = DOM.innetHTMLTransaction(transaction);
+    tr.innerHTML = DOM.innerHTMLTransaction(transaction);
 
     DOM.transactionsContainer.appendChild(tr);
   },
 
-  innetHTMLTransaction(transaction) {
+  innerHTMLTransaction(transaction) {
     const cssClass = transaction.amount > 0 ? 'income' : 'expense';
 
     const amount = Utils.formatCurrency(transaction.amount);
@@ -89,11 +99,15 @@ const DOM = {
   },
 
   updateBalance() {
-    document.querySelector('#incomeDisplay').innerHTML = Transaction.incomes();
-    document.querySelector(
-      '#expenseDisplay',
-    ).innerHTML = Transaction.expenses();
-    document.querySelector('#totalDisplay').innerHTML = Transaction.total();
+    document.querySelector('#incomeDisplay').innerHTML = Utils.formatCurrency(
+      Transaction.incomes(),
+    );
+    document.querySelector('#expenseDisplay').innerHTML = Utils.formatCurrency(
+      Transaction.expenses(),
+    );
+    document.querySelector('#totalDisplay').innerHTML = Utils.formatCurrency(
+      Transaction.total(),
+    );
   },
 };
 
