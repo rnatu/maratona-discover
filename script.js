@@ -33,9 +33,17 @@ const transactions = [
 ];
 
 const Transaction = {
+  all: transactions,
+
+  add(transaction) {
+    Transaction.all.push(transaction);
+
+    App.reload();
+  },
+
   incomes() {
     let income = 0;
-    transactions.forEach((value) => {
+    Transaction.all.forEach((value) => {
       if (value.amount > 0) income += value.amount;
     });
 
@@ -43,7 +51,7 @@ const Transaction = {
   },
   expenses() {
     let expense = 0;
-    transactions.forEach((value) => {
+    Transaction.all.forEach((value) => {
       if (value.amount < 0) expense += value.amount;
     });
 
@@ -74,7 +82,11 @@ const Utils = {
 const DOM = {
   transactionsContainer: document.querySelector('#data-table tbody'),
 
-  addTransaction(transaction, index) {
+  clearTransaction() {
+    DOM.transactionsContainer.innerHTML = '';
+  },
+
+  addTransaction(transaction) {
     const tr = document.createElement('tr');
     tr.innerHTML = DOM.innerHTMLTransaction(transaction);
 
@@ -115,4 +127,26 @@ transactions.forEach((transaction) => {
   DOM.addTransaction(transaction);
 });
 
-DOM.updateBalance();
+const App = {
+  init() {
+    transactions.forEach((transaction) => {
+      DOM.addTransaction(transaction);
+    });
+
+    DOM.updateBalance();
+  },
+
+  reload() {
+    DOM.clearTransaction();
+    App.init();
+  },
+};
+
+App.init();
+
+Transaction.add({
+  id: 5,
+  description: 'Gás',
+  amount: -8000,
+  date: '23/01/2021',
+});

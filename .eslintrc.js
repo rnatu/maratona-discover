@@ -13,5 +13,6 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-param-reassign': 'off',
     'prefer-const': 'off',
+    'no-use-before-define': 'off',
   },
 };
