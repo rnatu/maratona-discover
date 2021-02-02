@@ -78,10 +78,17 @@ const Utils = {
     return signal + value;
   },
 
-  // formatAmount(value) {
-  //   value = value.replace(/\D/g, '');
-  //   console.log(value);
-  // },
+  formatAmount(value) {
+    value = Number(value) * 100;
+
+    return value;
+  },
+
+  formatDate(date) {
+    const splittedDate = date.split('-').reverse().join('/');
+
+    return splittedDate;
+  },
 };
 
 const DOM = {
@@ -145,8 +152,12 @@ const Form = {
     event.preventDefault();
 
     try {
-      Form.validateFields();
-      Form.formatValues();
+      //! Form.validateFields();
+
+      const transaction = Form.formatValues();
+      Transaction.add(transaction);
+
+      Form.clearFields();
     } catch (error) {
       alert(error.message);
     }
@@ -163,16 +174,21 @@ const Form = {
     }
   },
 
-  // formatValues() {
-  //   let { description, amount, date } = Form.getValues();
+  formatValues() {
+    let { description, amount, date } = Form.getValues();
 
-  //   amount = Utils.formatAmount(amount);
-  // },
+    amount = Utils.formatAmount(amount);
+    date = Utils.formatDate(date);
+
+    return { description, amount, date };
+  },
+
+  clearFields() {
+    Form.description.value = '';
+    Form.amount.value = '';
+    Form.date.value = '';
+  },
 };
-
-Transaction.all.forEach((transaction) => {
-  DOM.addTransaction(transaction);
-});
 
 const App = {
   init() {
@@ -190,9 +206,3 @@ const App = {
 };
 
 App.init();
-
-Transaction.add({
-  description: 'Gás',
-  amount: -8000,
-  date: '23/01/2021',
-});
