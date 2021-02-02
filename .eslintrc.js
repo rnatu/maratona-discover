@@ -14,5 +14,6 @@ module.exports = {
     'no-param-reassign': 'off',
     'prefer-const': 'off',
     'no-use-before-define': 'off',
+    'no-alert': 'off',
   },
 };

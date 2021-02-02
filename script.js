@@ -77,6 +77,11 @@ const Utils = {
 
     return signal + value;
   },
+
+  // formatAmount(value) {
+  //   value = value.replace(/\D/g, '');
+  //   console.log(value);
+  // },
 };
 
 const DOM = {
@@ -121,6 +126,48 @@ const DOM = {
       Transaction.total(),
     );
   },
+};
+
+const Form = {
+  description: document.querySelector('input#description'),
+  amount: document.querySelector('input#amount'),
+  date: document.querySelector('input#date'),
+
+  getValues() {
+    return {
+      description: Form.description.value,
+      amount: Form.amount.value,
+      date: Form.date.value,
+    };
+  },
+
+  submit(event) {
+    event.preventDefault();
+
+    try {
+      Form.validateFields();
+      Form.formatValues();
+    } catch (error) {
+      alert(error.message);
+    }
+  },
+
+  validateFields() {
+    const { description, amount, date } = Form.getValues();
+    if (
+      description.trim() === '' ||
+      amount.trim() === '' ||
+      date.trim() === ''
+    ) {
+      throw new Error('Por favor, preencha todos os campos');
+    }
+  },
+
+  // formatValues() {
+  //   let { description, amount, date } = Form.getValues();
+
+  //   amount = Utils.formatAmount(amount);
+  // },
 };
 
 Transaction.all.forEach((transaction) => {
