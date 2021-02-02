@@ -5,29 +5,20 @@ const Modal = {
   },
 };
 
+const Storage = {
+  get() {
+    return JSON.parse(localStorage.getItem('dev.finances:transactions')) || [];
+  },
+  set(transaction) {
+    localStorage.setItem(
+      'dev.finances:transactions',
+      JSON.stringify(Transaction.all),
+    );
+  },
+};
+
 const Transaction = {
-  all: [
-    {
-      description: 'Luz',
-      amount: -50000,
-      date: '23/01/2021',
-    },
-    {
-      description: 'Criação website',
-      amount: 500000,
-      date: '13/01/2021',
-    },
-    {
-      description: 'Internet',
-      amount: -20510,
-      date: '25/01/2021',
-    },
-    {
-      description: 'App',
-      amount: 200000,
-      date: '25/01/2021',
-    },
-  ],
+  all: Storage.get(),
 
   add(transaction) {
     Transaction.all.push(transaction);
@@ -196,6 +187,8 @@ const App = {
     });
 
     DOM.updateBalance();
+
+    Storage.set(Transaction.all);
   },
 
   reload() {
