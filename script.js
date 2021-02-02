@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const modal = {
+const Modal = {
   toggleModal() {
     document.querySelector('.modal-overlay').classList.toggle('active');
   },
@@ -31,7 +31,6 @@ const Transaction = {
 
   add(transaction) {
     Transaction.all.push(transaction);
-
     App.reload();
   },
 
@@ -152,12 +151,11 @@ const Form = {
     event.preventDefault();
 
     try {
-      //! Form.validateFields();
-
+      Form.validateFields();
       const transaction = Form.formatValues();
       Transaction.add(transaction);
-
       Form.clearFields();
+      Modal.toggleModal();
     } catch (error) {
       alert(error.message);
     }
