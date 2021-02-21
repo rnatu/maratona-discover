@@ -98,6 +98,10 @@ header {
   color: var(--white);
 }
 
+.card.total.negative {
+  background: var(--red);
+}
+
 /* transactions ================= */
 #transaction {
   width: 100%;
@@ -222,6 +226,16 @@ td.expense {
   color: #e92929;
 }
 
+td.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+td.icons img {
+  margin-right: 2rem;
+}
+
 /* modal ======================== */
 .modal-overlay {
   width: 100%;
@@ -309,6 +323,17 @@ footer {
   html {
     font-size: 87.5%;
   }
+
+  td.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  td.icons img {
+    margin-right: 0;
+  }
+
 
   #balance {
     display: grid;
